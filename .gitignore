@@ -1,0 +1,103 @@
+# 🛑 Python & Virtual Environment
+venv/
+.venv/
+http-client.env.json
+api-test/
+*.pyc
+*.pyo
+*.pyd
+__pycache__/
+*.swp
+*.swo
+.Python
+.env
+.env.*
+*.sqlite3
+
+# 🛑 Django Logs & Migrations
+logs/
+*.log
+debug.log
+db.sqlite3
+media/
+staticfiles/
+# Ignore all migration files
+# **/migrations/*.py
+
+# But keep __init__.py files in migrations
+!**/migrations/__init__.py
+
+
+# 🛑 IDE & Editor Files
+.vscode/
+.idea/
+*.iml
+*.sublime-workspace
+*.sublime-project
+
+# 🛑 System Files
+.DS_Store
+Thumbs.db
+*.bak
+*.tmp
+*~
+*.swp
+*.swo
+
+# 🛑 Virtual Environment & Dependencies
+pip-log.txt
+pip-delete-this-directory.txt
+poetry.lock
+Pipfile
+Pipfile.lock
+
+# 🛑 Cache & Compiled Files
+*.egg
+*.egg-info/
+dist/
+build/
+*.manifest
+
+# 🛑 Docker & Deployment
+docker-compose.override.yml
+.env.production
+.env.local
+.env.development
+.env.test
+/secrets/
+
+# 🛑 Celery & Redis
+celerybeat-schedule
+celerybeat.pid
+
+# 🛑 Database & Storage
+*.db
+*.sqlite3
+*.pgsql
+*.mysql
+*.log
+*.out
+
+# 🛑 Coverage & Test Reports
+htmlcov/
+coverage.xml
+*.cover
+.pytest_cache/
+.tox/
+.nox/
+.coverage
+
+# 🛑 Node.js & Frontend (if using React/Vue)
+node_modules/
+package-lock.json
+yarn.lock
+npm-debug.log
+.DS_Store
+
+# 🛑 API Documentation (Swagger)
+swagger.json
+swagger.yaml
+
+# 🛑 Security & Secrets
+secrets.json
+config/settings/local.py
