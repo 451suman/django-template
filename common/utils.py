@@ -228,8 +228,7 @@ def generate_qr_code(order_amount):
     PRIVATE_KEY_STRING = os.environ.get("NCHL_PRIVATE_KEY_STRING")
 
     # if PRIVATE_KEY_STRING is None:
-    #     PRIVATE_KEY_STRING = "-----BEGIN RSA PRIVATE KEY-----\nMIICXQIBAAKBgQC009W2gk4oo7x9drPF8EAGBX8kba4LwnLqPYfh8im8nK5nt/hE\nvFiAgzCUfAoW4iNMH6zg/q3nhvqhaca9YKrXZpFlqsxZnxR2XOZzJdMHXrenK1N5\nKygKxKlJx6VEOUtC23GwzNsrMeXKzAp2/+9lFnPwoticn+aFcY59Ke49qwIDAQAB\nAoGBALB+KhOu71ZfKfRTTXge3H6EEuqdWskDi2HxmJUB5ZbAXsHBIEMGimM0qM/k\nmXxoUAdWy0f3jAl1B19QfLgOh+94kvPZWyVivTONctlWTKANhTR9veRyl5p72yZh\niYqHMArVqlve4EpbmpOa6cGwTG0kJylQCaR0IbjVX23uYq5xAkEA+y+uzCigQa/5\n4GKOyc1jihdlVezNfE/P24yu6ahoIHNFTdReBtKFBSIusrYAURWzXYEyzxnVVgBd\nhsxonOUVrQJBALhK+Pm+97PP5OhCQxPCgcOOT8Pk68NZ8VZxeyjYBBNLYz2JBLYO\ngNfsXNHCKt/gPnNuGODyy8/dkk4fMk+8m7cCQQCmu1n97qGhuJvW09UQIyOFkE4V\noSAs+hVxGIsqUjz7/Ufth5/6S1c8txnkSmcfa5Yp5Q7C5dT0Rz3NsnVmX7HpAkBY\njdXzE7sskNHadLSMkyMNV52mcKKE/PwFYIQgjSPwLYJjOCqmXHO2zWGQfS9i4frA\nNoAH30Ll//7kQQNI40UjAkBhkIPAyA+p9OcFSD2OyICWpOXCQmUsyFhrGW2S67A6\nzyAA58sTfW5gqXcLGoqlf8DNY9tdghdVkUBOHnhA+e2j\n-----END RSA PRIVATE KEY-----"
-
+  
     transaction_currency = QR_DATA["transactionCurrency"]
 
     acquirer_id = os.environ.get("ACQUIRER_ID")
@@ -306,7 +305,7 @@ def generate_static_qr_code(store, terminal):
     PRIVATE_KEY_STRING = os.environ.get("NCHL_PRIVATE_KEY_STRING")
 
     if PRIVATE_KEY_STRING is None:
-        PRIVATE_KEY_STRING = "-----BEGIN RSA PRIVATE KEY-----\nMIICXQIBAAKBgQC009W2gk4oo7x9drPF8EAGBX8kba4LwnLqPYfh8im8nK5nt/hE\nvFiAgzCUfAoW4iNMH6zg/q3nhvqhaca9YKrXZpFlqsxZnxR2XOZzJdMHXrenK1N5\nKygKxKlJx6VEOUtC23GwzNsrMeXKzAp2/+9lFnPwoticn+aFcY59Ke49qwIDAQAB\nAoGBALB+KhOu71ZfKfRTTXge3H6EEuqdWskDi2HxmJUB5ZbAXsHBIEMGimM0qM/k\nmXxoUAdWy0f3jAl1B19QfLgOh+94kvPZWyVivTONctlWTKANhTR9veRyl5p72yZh\niYqHMArVqlve4EpbmpOa6cGwTG0kJylQCaR0IbjVX23uYq5xAkEA+y+uzCigQa/5\n4GKOyc1jihdlVezNfE/P24yu6ahoIHNFTdReBtKFBSIusrYAURWzXYEyzxnVVgBd\nhsxonOUVrQJBALhK+Pm+97PP5OhCQxPCgcOOT8Pk68NZ8VZxeyjYBBNLYz2JBLYO\ngNfsXNHCKt/gPnNuGODyy8/dkk4fMk+8m7cCQQCmu1n97qGhuJvW09UQIyOFkE4V\noSAs+hVxGIsqUjz7/Ufth5/6S1c8txnkSmcfa5Yp5Q7C5dT0Rz3NsnVmX7HpAkBY\njdXzE7sskNHadLSMkyMNV52mcKKE/PwFYIQgjSPwLYJjOCqmXHO2zWGQfS9i4frA\nNoAH30Ll//7kQQNI40UjAkBhkIPAyA+p9OcFSD2OyICWpOXCQmUsyFhrGW2S67A6\nzyAA58sTfW5gqXcLGoqlf8DNY9tdghdVkUBOHnhA+e2j\n-----END RSA PRIVATE KEY-----"
+        PRIVATE_KEY_STRING = "-----BEGIN RSA PRIVATkjhijnjknkj-----END RSA PRIVATE KEY-----"
 
     transaction_currency = QR_DATA["transactionCurrency"]
     acquirer_id = os.environ.get("ACQUIRER_ID")
@@ -359,44 +358,6 @@ def generate_hmac_sha512_token(data: str) -> str:
 
     return token
 
-
-# https://ots.f1soft.com.np/secret/d8e4a2dc96b18bf6b954b50fd6c652fc?authCode=YzQ5MWQ4MzhhNDM1ODJkMDc0NTY0ZTg5ZmE5NTQ4ZmE%3D
-# hGi7JPtXnRTxOefYFaQM6wUOky_7MceNsOsB8nhIus9rCBhuRgDI394wI7Y3injzKCM
-
-
-# def prepare_ticket(QrcodeTicket, event_name, email, contact_no, booking_ticket_id):
-#     # Ticket number
-#     ticket_number = generate_ticket_number()
-
-#     # QR payload
-#     event_name = event_name
-#     email = email
-#     contact = contact_no
-#     payload = f"{event_name}|{ticket_number}|{email}|{contact}"
-
-#     # Generate QR
-#     qr = qrcode.QRCode(
-#         version=1,
-#         error_correction=qrcode.constants.ERROR_CORRECT_H,
-#         box_size=10,
-#         border=4,
-#     )
-#     qr.add_data(payload)
-#     qr.make(fit=True)
-#     img = qr.make_image(fill_color="black", back_color="white")
-
-#     # Buffer to image
-#     buffer = io.BytesIO()
-#     img.save(buffer, format="PNG")
-#     buffer.seek(0)
-#     filename = f"{ticket_number}.png"
-#     qrcode_ticket = QrcodeTicket.objects.create(
-#         event_booking_ticket_id=booking_ticket_id, ticket_number=ticket_number
-#     )
-#     qrcode_ticket.qr_code.save(filename, ContentFile(buffer.read()), save=False)
-#     qrcode_ticket.save()
-#     buffer.close()
-#     return True
 
 
 def image_to_base64(image_field):
@@ -469,60 +430,6 @@ class Base64ImageField(ImageField):
         if request is not None:
             return request.build_absolute_uri(value.url)
         return super().to_representation(value)
-
-
-# def verify_uat_signature(signature_string: str, base64_signature: str) -> bool:
-#     # try:
-#     # cert_pem_str = "-----BEGIN CERTIFICATE-----\nMIIDZjCCAk6gAwIBAgIKbazp0wAFAAACqTANBgkqhkiG9w0BAQsFADAaMRgwFgYD\nVQQDEw9NWVRFU1RJU1NVRVItQ0EwHhcNMjEwNjIyMDQ1NTU5WhcNMjIxMjEyMDc0\nMTM2WjCBgjELMAkGA1UEBhMCTlAxEDAOBgNVBAgTB0JhZ21hdGkxEjAQBgNVBAcT\nCUthdGhtYW5kdTEMMAoGA1UEChMDTlFSMQwwCgYDVQQLEwNOUVIxDDAKBgNVBAMT\nA05RUjEjMCEGCSqGSIb3DQEJARYUbm8tcmVwbHlAbmNobC5jb20ubnAwgZ8wDQYJ\nKoZIhvcNAQEBBQADgY0AMIGJAoGBAMbIIkH+0JOZKdOVT7Wr3gPOQpvk9pwQ2gME\n2p7UIdDlxg2KjblMLRsWNnh11mcVvF8EiTFXSJnXGQeH7uunMpea5vKqshkLVoa2\nGjRDtLmgnQ09ALWzeHRFBKiAaxwSUq6g0+o9q3Fwbox4W7wrcRqdjU1FW6/3IGxv\n8aLniE2VAgMBAAGjgcgwgcUwDgYDVR0PAQH/BAQDAgTwMBMGA1UdJQQMMAoGCCsG\nAQUFBwMCMB0GA1UdDgQWBBTUsl7hag3HSDMQWE/LvTWNltOK1jAfBgNVHSMEGDAW\ngBTe1c5iHw892GWgw9yxIQgoxQm46TBeBggrBgEFBQcBAQRSMFAwTgYIKwYBBQUH\nMAKGQmZpbGU6Ly9teXRlc3Rpc3N1ZXIvQ2VydEVucm9sbC9teXRlc3Rpc3N1ZXJf\nTVlURVNUSVNTVUVSLUNBKDUpLmNydDANBgkqhkiG9w0BAQsFAAOCAQEA21H5nQYI\ncH4oSid+qFfwgylMq8sfjOtIKtma2u97UDEstOztRBxDUDY/xzgxKqYKIO4okJAX\nFgsef26xRI8uLbu1BJoyX8PGdWbe4KCvfNXrARnc5wSpYLwNTczqTOBhZdhTGJP3\nJxMYRNEL1d3n33bwJD3jrSAebLlHX8S/RC6YVC60pb9juHA8Ln+cwkNQSFD+qEzt\n4Ysr5lNWSTaNex8zsYjbLCcER41pEFk6w8qmY6/yQagw710FioZzhJuTWxz3o5N1\nNVf5P/lSBQgNSbMBLXkKjHT1dPQaM03sk/nJ2YSKA0PeeM/ZjZTsQ+eDrovvbNZF\nvzlfmIJcTY5cCQ==\n-----END CERTIFICATE-----"
-
-#     cert_pem_str = os.environ.get("NCHL_CERTIFICATE")
-#     # try:
-#     cert = load_pem_x509_certificate(cert_pem_str.encode(), default_backend())
-#     public_key = cert.public_key()
-
-#     decoded_signature = base64.b64decode(base64_signature)
-
-#     public_key.verify(
-#         decoded_signature,
-#         signature_string.encode("utf-8"),
-#         padding.PKCS1v15(),
-#         hashes.SHA256(),
-#     )
-
-#     return True
-#     # except InvalidSignature:
-#     #     print("Invalid signature")
-#     #     return False
-#     # except Exception as e:
-#     #     print(f"Verification error: {e}")
-#     #     return False
-#     # except Exception as e:
-#     #     print(f"Signature verification failed: {e}")
-#     #     return False
-
-
-# def verify_signature(signature_string: str, base64_signature: str) -> bool:
-#     public_key_pem = """-----BEGIN PUBLIC KEY-----
-# MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAqoLwlLr8zh/Rje6H/4KV
-# 6sIYJ3VOM+7EglPPbDFwI2uOvm18pS2OXoZfZeq2+FpWM8B6IckLd+HolQAp6yDA
-# LvU7SrLlRpZAtDywRB3if4vHlvZbjYkHUa+CCK9f5Q95neIZv3+t/ZBZaFiguM2s
-# 4qMhTnE3p/ZvS/sMKfdwhPCrn66OuSrOxfWAQhCTGdBiTgo3H3SVlRDCb81RFu/s
-# 2g+SXROib+RcEZfcasN2EmoYKJnERbwe3GN3V6EdSMSeg2RvgvybirCA1UikOalL
-# ruieTfYZQItMvo9jx48spI+gnQg8a+Mq/rCikQMkxyPfYGCOQ1u9/exIzG7PTmxb
-# oQIDAQAB
-# -----END PUBLIC KEY-----"""
-
-#     public_key = serialization.load_pem_public_key(public_key_pem.encode())
-#     decoded_signature = base64.b64decode(base64_signature)
-
-#     public_key.verify(
-#         decoded_signature,
-#         signature_string.encode(),
-#         padding.PKCS1v15(),
-#         hashes.SHA256(),
-#     )
-#     return True
-
 
 def generate_transaction_id():
     date_part = datetime.now().strftime("%y%m%d")  # e.g., 250728
